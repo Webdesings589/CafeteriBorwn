@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed Fullscreen</title>
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* 🚫 evita scroll */
+      font-family: Arial, sans-serif;
+      background: #000;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .fullscreen-container {
+      width: 100%;
+      height: 100vh; /* 🔥 pantalla completa */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* IFRAME */
+    .fullscreen-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* FIX para mobile (evita bugs de vh) */
+    @supports (-webkit-touch-callout: none) {
+      .fullscreen-container {
+        height: -webkit-fill-available;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="fullscreen-container">
+    <iframe 
+      src="https://tusitio.com"  <!-- 🔁 CAMBIA ESTE LINK -->
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </section>
+
+</body>
+</html>
